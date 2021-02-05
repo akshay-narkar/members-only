@@ -3,33 +3,23 @@
 <h1>All Posts</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Posts</th>
-      <!-- <th colspan="2"></th> -->
-      <th>Author</th>
-      <!-- <th colspan="2"></th> -->
-      <th>Read Post</th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+            <th>Posts</th>
+            <th>Author</th>
+            <th>Link</th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= truncate(post.post,length:50) %></td>
-
-      <% if user_signed_in? %>
-      <td><%= post.name %></td>
-      <%else%>
-      <td>Anon</td>
-      <%end%>
-      <td><%= link_to 'Show', post %></td>
-
-      <!-- <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-    </tr>
-    <% end %>
-  </tbody>
+    <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+            <td><%= truncate(post.post,length:50) %></td>
+            <td><%= signin?(post) %></td>
+            <td><%= link_to 'Show', post %></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br />

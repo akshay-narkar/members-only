@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def signin?(post)
+  def signin(post)
     if user_signed_in?
       post.user.username
     else

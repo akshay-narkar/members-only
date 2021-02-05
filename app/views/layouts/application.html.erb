@@ -20,11 +20,7 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-        <%= render 'signedout' %>
-    <%else%>
-        <%= render 'signedin' %>
-    <%end%>
+    <%=login%>
 
     <%= yield %>
 </body>

@@ -1,7 +1,7 @@
 module ApplicationHelper
-  def signin(post)
+  def author_name(post)
     if user_signed_in?
-      p post.user.username
+      post.user.username
     else
       render plain: 'Anon'
     end

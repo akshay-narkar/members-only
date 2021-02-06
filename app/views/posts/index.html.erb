@@ -15,7 +15,7 @@
         <% @posts.each do |post| %>
         <tr>
             <td><%= truncate(post.post,length:50) %></td>
-            <td><%= signin(post) %></td>
+            <td><%= author_name(post) %></td>
             <td><%= link_to 'Show', post %></td>
         </tr>
         <% end %>

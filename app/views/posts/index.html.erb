@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Posts</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Posts</th>
+            <th>Author</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+            <td><%= truncate(post.post,length:50) %></td>
+            <td><%= author_name(post) %></td>
+            <td><%= link_to 'Show', post %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Create New Post', new_post_path %>

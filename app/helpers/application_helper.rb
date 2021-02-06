@@ -9,9 +9,9 @@ module ApplicationHelper
 
   def login
     if user_signed_in?
-      render 'signedout'
+      render 'posts/signedout'
     else
-      render 'signedin'
+      render 'posts/signedin'
     end
   end
 end
